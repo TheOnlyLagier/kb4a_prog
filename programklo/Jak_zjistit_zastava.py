@@ -9,7 +9,7 @@ Y = []  # = výstupy
 with open("programklo\heart.csv", "r", encoding="utf-8") as file:
     reader = csv.DictReader(file)
     for row in reader:
-        # Načtení vstupů (vše kromě cílového sloupce)
+        # Načtení vstupů
         inputs = [
             float(row["age"]),
             float(row["sex"]),
@@ -27,7 +27,7 @@ with open("programklo\heart.csv", "r", encoding="utf-8") as file:
         ]
         X.append(inputs)
 
-        # Načtení výstupu (cílový sloupec)
+        # Načtení výstupu
         Y.append(int(row["heart_disease"]))
 
 # ---------- Ruční rozdělení na trénování a testování ----------
@@ -53,7 +53,7 @@ neural_network.fit(trening_X, trening_Y)
 # ---------- Vyhodnocení ----------
 predictions = neural_network.predict(test_X)
 
-# Výpočet přesnosti a matice záměn
+# Výpočet přesnosti
 accuracy = accuracy_score(test_Y, predictions)
 conf_matrix = confusion_matrix(test_Y, predictions)
 
