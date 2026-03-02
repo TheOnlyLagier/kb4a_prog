@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 
 X = []  #vstupy
 Y = []  #výstupy
-
+#Převádí kategorická data do číselného formátu--LabelEncoder
 # Inicializace LabelEncoder pro textové sloupce
 protocol_encoder = LabelEncoder()
 encryption_encoder = LabelEncoder()
